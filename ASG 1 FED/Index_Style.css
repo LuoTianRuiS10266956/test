@@ -1,0 +1,353 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    text-decoration: none;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(rgba(30, 30, 46, 0.8), rgba(30, 30, 46, 0.8)),
+                url('Website_Images/Index_BG_Image.jpg') no-repeat center center fixed;
+    background-size: cover;
+    background-position: center 82%;
+    color: #ffffff;
+    display: flex;
+    flex-direction: column; /* Arrange header first, then content */
+    min-height: 100vh;
+}
+
+/* Header */
+header {
+    background-color: #1c1e26;
+    color: #ffffff;
+    text-align: center;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-bottom: 1px solid #808080; /* Add grey stroke below main header */
+    margin-left: 220px; /* Push main header to the right of the sidebar */
+}
+
+.left-header {
+    grid-area: left-header;
+    background-color: #1c1e26;
+    color: #ffffff;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-right: 1px solid #808080; /* Add stroke to separate from main header */
+    border-bottom: 1px solid #808080; /* Add stroke separating from sidebar */
+    margin: 0;
+}
+
+.header-logo {
+    max-height: 100%;  /* Ensures the image does not exceed the height of the header */
+    max-width: 100%;   /* Ensures the image does not exceed the width of the header */
+    object-fit: contain;
+}
+
+.main-header {
+    grid-area: main-header;
+    background-color: #1c1e26;
+    color: #ffffff;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-bottom: 1px solid #808080; /* Stroke below header */
+    margin: 0;
+}
+
+header h1 {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+h1, h2 {
+    color: #ffffff;
+    margin-bottom: 10px;
+}
+
+/* Header links */
+.header-links a {
+    color: white;
+    text-decoration: none;
+    margin-left: 15px;
+    padding: 8px 12px;
+    border-radius: 5px;
+    background-color: #5865F2;
+    font-weight: bold;
+}
+
+.header-links a.discord-button {
+    background-color: #5865F2;
+}
+
+.container {
+    display: grid;
+    grid-template-areas:
+        "left-header main-header"
+        "sidebar main-content";
+    grid-template-columns: 220px auto; /* Sidebar width and remaining space */
+    grid-template-rows: 60px auto; /* Header height and remaining space */
+    height: 100vh; /* Full viewport height */
+}
+
+.header-links a.partner-button {
+    background-color: #FF5555;
+}
+
+/* Sidebar */
+.sidebar {
+    grid-area: sidebar;
+    background-color: #242536;
+    padding: 20px;
+    border-right: 1px solid #808080; /* Stroke to separate sidebar from content */
+    overflow-y: auto; /* Enable scrolling if content overflows */
+    height: 100%;
+}
+
+.sidebar nav ul {
+    list-style: none; /* Remove bullets */
+    padding: 0;
+    margin: 0;
+}
+
+.sidebar nav ul li {
+    margin: 10px 0;
+}
+
+.sidebar nav ul li a {
+    display: flex;
+    align-items: center; /* Align icon and text */
+    text-decoration: none;
+    color: #ffffff; /* Text color */
+    font-size: 16px;
+    padding: 10px;
+    border-radius: 8px; /* Rounded corners */
+    transition: background-color 0.3s;
+}
+
+.sidebar nav ul li a:hover {
+    background-color: #33363f; /* Hover effect */
+}
+
+.sidebar nav ul li a i {
+    font-size: 20px; /* Icon size */
+    margin-right: 10px; /* Space between icon and text */
+    color: #5865F2; /* Icon color */
+}
+
+.sidebar nav ul li a:hover i {
+    color: #7289da; /* Change icon color on hover */
+}
+
+/* Main Content */
+.main-content {
+    grid-area: main-content;
+    padding: 20px;
+    margin-top: 10px;
+}
+
+h1, h2 {
+    color: #ffffff;
+    margin-bottom: 10px;
+}
+
+/* Active Codes Section */
+.codes {
+    margin-top: 160px;
+}
+
+h2 {
+    font-size: 20px;
+    font-weight: bold;
+    padding-bottom: 5px;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+}
+
+/* Container for code cards */
+.code-cards {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap; /* Adjust layout for smaller screens */
+}
+
+/* Individual Code Card */
+.code-card {
+    background-color: #282943;
+    padding: 15px 20px;
+    border-radius: 5px;
+    width: calc(25% - 20px); /* Adjust width for a 4-card layout */
+    color: #ffffff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    border: 2px solid transparent;
+}
+
+.codes h2 {
+    font-size: 20px;
+    font-weight: bold;
+    border-bottom: 2px solid #5865F2;
+    padding-bottom: 5px;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+}
+
+.codes h2::before {
+    content: "●";
+    color: #5865F2;
+    font-size: 14px;
+    margin-right: 8px;
+}
+
+.code-card:hover {
+    border: 2px solid #5865F2;
+}
+
+.code-card strong {
+    font-size: 16px;
+    font-weight: bold;
+    color: #ffffff;
+    margin-bottom: 5px;
+}
+
+.code-card p {
+    font-size: 14px;
+    margin: 5px 0;
+    color: #b0b0b0;
+}
+
+/* Event Timeline Section */
+.timeline {
+    margin-top: 50px;
+    color: #ffffff;
+}
+
+.timeline h2 {
+    font-size: 20px;
+    font-weight: bold;
+    border-bottom: 2px solid #5865F2;
+    padding-bottom: 5px;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+}
+
+.timeline h2::before {
+    content: "●";
+    color: #5865F2;
+    font-size: 14px;
+    margin-right: 8px;
+}
+
+/* Tab Navigation */
+.timeline-tabs {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.timeline-tab {
+    background-color: #282943;
+    color: #ffffff;
+    padding: 5px 15px;
+    border-radius: 3px;
+    font-weight: bold;
+    cursor: pointer;
+    text-align: center;
+    transition: background-color 0.3s;
+}
+
+.timeline-tab.active {
+    background-color: #5865F2;
+}
+
+/* Event List Layout */
+.timeline-grid {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.timeline-column {
+    flex: 1;
+}
+
+.timeline-column h3 {
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+}
+
+/* Event Card Styling */
+.timeline-event {
+    position: relative; /* For layering content */
+    display: flex; /* Allows alignment of inner elements */
+    align-items: center; /* Vertically center the content */
+    justify-content: flex-start; /* Align text to the left */
+    width: 750px; /* Fixed width for consistency */
+    height: 80px; /* Fixed height to standardize card size */
+    border-radius: 8px; /* Rounded corners */
+    overflow: hidden; /* Prevents content overflow */
+    margin-bottom: 20px; /* Spacing between cards */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3); /* Optional shadow for styling */
+}
+
+.timeline-event img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%; /* Matches the width of the parent */
+    height: 100%; /* Matches the height of the parent */
+    object-fit: cover; /* Crops excess while maintaining aspect ratio */
+    z-index: 1; /* Keeps it behind the text */
+    filter: brightness(50%); /* Optional: Adjust brightness for readability */
+}
+
+.timeline-event-info {
+    position: relative;
+    z-index: 2; /* Ensures it appears above the image */
+    padding: 10px;
+    color: white;
+    width: 100%; /* Use the full width of the parent container */
+    text-overflow: ellipsis; /* Adds "..." if text overflows */
+    white-space: nowrap; /* Prevents text from wrapping */
+    overflow: hidden; /* Ensures text stays within bounds */
+}
+
+.timeline-event-title {
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 5px;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.7); /* Add shadow for contrast */
+}
+
+.timeline-event-time {
+    font-size: 14px;
+    font-weight: bold;
+    background-color: rgba(0, 0, 0, 0.6); /* Semi-transparent background for time */
+    padding: 5px 10px;
+    border-radius: 4px;
+    display: inline-block;
+    margin-top: 5px;
+    text-shadow: none;
+}
+
+.timeline-event:hover {
+    background-color: #3a3b54;
+}

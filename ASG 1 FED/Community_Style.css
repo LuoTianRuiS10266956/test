@@ -1,0 +1,397 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    text-decoration: none;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(rgba(30, 30, 46, 0.8), rgba(30, 30, 46, 0.8)),
+                url('Website_Images/Qingque_BG_Image.webp') no-repeat center center fixed;
+    background-size: cover;
+    background-position: center 5%;
+    color: #ffffff;
+    display: flex;
+    flex-direction: column; /* Arrange header first, then content */
+    min-height: 100vh;
+}
+
+/* Header */
+header {
+    background-color: #1c1e26;
+    color: #ffffff;
+    text-align: center;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-bottom: 1px solid #808080; /* Add grey stroke below main header */
+    margin-left: 220px; /* Push main header to the right of the sidebar */
+}
+
+.left-header {
+    grid-area: left-header;
+    background-color: #1c1e26;
+    color: #ffffff;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-right: 1px solid #808080; /* Add stroke to separate from main header */
+    border-bottom: 1px solid #808080; /* Add stroke separating from sidebar */
+    margin: 0;
+}
+
+.header-logo {
+    max-height: 100%;  /* Ensures the image does not exceed the height of the header */
+    max-width: 100%;   /* Ensures the image does not exceed the width of the header */
+    object-fit: contain;
+}
+
+.main-header {
+    grid-area: main-header;
+    background-color: #1c1e26;
+    color: #ffffff;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-bottom: 1px solid #808080; /* Stroke below header */
+    margin: 0;
+}
+
+.container {
+    display: grid;
+    grid-template-areas:
+        "left-header main-header"
+        "sidebar main-content";
+    grid-template-columns: 220px auto; /* 220px for the sidebar, auto for the rest */
+    grid-template-rows: 60px auto; /* Header height + remaining space for content */
+    height: 100vh; /* Full viewport height */
+    overflow: hidden; /* Prevents layout overflow issues */
+}
+
+.sidebar {
+    grid-area: sidebar; /* Ensures it occupies the sidebar grid area */
+    background-color: #242536; /* Sidebar background */
+    padding: 20px;
+    overflow-y: auto; /* Allows vertical scrolling if the content overflows */
+    height: 100%; /* Fills the entire height of its grid row */
+    border-right: 1px solid #808080; /* Optional stroke for separation */
+    z-index: 2;
+}
+
+.sidebar nav ul {
+    list-style: none; /* Remove bullets */
+    padding: 0;
+    margin: 0;
+}
+
+.sidebar nav ul li {
+    margin: 10px 0;
+}
+
+.sidebar nav ul li a {
+    display: flex;
+    align-items: center; /* Align icon and text */
+    text-decoration: none;
+    color: #ffffff; /* Text color */
+    font-size: 16px;
+    padding: 10px;
+    border-radius: 8px; /* Rounded corners */
+    transition: background-color 0.3s;
+}
+
+.sidebar nav ul li a:hover {
+    background-color: #33363f; /* Hover effect */
+}
+
+.sidebar nav ul li a i {
+    font-size: 20px; /* Icon size */
+    margin-right: 10px; /* Space between icon and text */
+    color: #5865F2; /* Icon color */
+}
+
+.sidebar nav ul li a:hover i {
+    color: #7289da; /* Change icon color on hover */
+}
+
+footer {
+    background-color: #282943;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    margin-top: auto;
+}
+
+.m7-icon-text {
+    display: flex; /* Ensures icons and text stay side-by-side */
+    margin-left: 118px; /* Keeps it aligned after the sidebar */
+    margin-top: 50px; /* Adds spacing from the top */
+    align-items: center; /* Vertically aligns text with the icon */
+}
+
+.m7-text {
+    margin-left: 30px; /* Spacing between the icon and text */
+    color: white;
+    font-size: 30px;
+}
+
+.m7-icon {
+    max-height: 100px; /* Adjust as needed */
+    max-width: 100px; /* Adjust as needed */
+}
+
+.volkin-section{
+    margin-left: 118px;
+    margin-top: 50px;
+    border-radius: 1px;
+    border-color: grey;
+    text-decoration: none;
+}
+
+.volkin {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    display: flex;
+    align-items: center;
+    background-color: darkcyan;
+    height: 60px;
+    width: 500px;
+}
+
+.volkin .volkin-img {
+    margin-left: 10px;
+    max-height: 50px;
+    max-width: 50px;
+}
+
+.volkin-text {
+    background-color: #282828; /* For example */
+    color: #ffffff; /* Text color */
+    font-size: 20px;
+    max-width: 500px;
+    height: 130px;
+}
+
+.volkin .volkin-header {
+    margin-left: 10px;
+    color: white;
+    font-size: 30px;
+}
+
+.mrpokke-section{
+    margin-left: 1200px;
+    margin-top: -627px;
+    border-radius: 1px;
+    border-color: grey;
+}
+
+.mrpokke {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    display: flex;
+    align-items: center;
+    background-color: pink;
+    height: 60px;
+    width: 500px;
+}
+
+.mrpokke .mrpokke-img {
+    margin-left: 10px;
+    max-height: 50px;
+    max-width: 50px;
+}
+
+.mrpokke-text {
+    background-color: #282828; /* For example */
+    color: #ffffff; /* Text color */
+    font-size: 20px;
+    max-width: 500px;
+    height: 130px;
+}
+
+.mrpokke .mrpokke-header {
+    margin-left: 10px;
+    color: white;
+    font-size: 30px;
+}
+
+.smack-section{
+    margin-left: 340px;
+    margin-top: 200px;
+    border-radius: 1px;
+    border-color: grey;
+}
+
+.smack {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    display: flex;
+    align-items: center;
+    background-color: green;
+    height: 60px;
+    width: 500px;
+}
+
+.smack .smack-img {
+    margin-left: 10px;
+    max-height: 50px;
+    max-width: 50px;
+    border-radius: 50%;
+}
+
+.smack-text {
+    background-color: #282828; /* For example */
+    color: #ffffff; /* Text color */
+    font-size: 20px;
+    max-width: 500px;
+    height: 130px;
+}
+
+.smack .smack-header {
+    margin-left: 10px;
+    color: white;
+    font-size: 30px;
+}
+
+.mtashed-section{
+    margin-left: 1206px;
+    margin-top: -190px;
+    border-radius: 1px;
+    border-color: grey;
+}
+
+.mtashed {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    display: flex;
+    align-items: center;
+    background-color: blue;
+    height: 60px;
+    width: 500px;
+}
+
+.mtashed .mtashed-img {
+    margin-left: 10px;
+    max-height: 50px;
+    max-width: 50px;
+    border-radius: 50%;
+}
+
+.mtashed-text {
+    background-color: #282828; /* For example */
+    color: #ffffff; /* Text color */
+    font-size: 20px;
+    max-width: 500px;
+    height: 130px;
+}
+
+.mtashed .mtashed-header {
+    margin-left: 10px;
+    color: white;
+    font-size: 30px;
+}
+
+/* Social Buttons Section */
+.social-buttons {
+    display: flex;
+    gap: 20px; /* Adds spacing between buttons */
+    margin-top: 30px; /* Adds spacing above the buttons */
+    padding-left: 225px; /* Align with Gacha Smack */
+}
+
+.social-buttons .button {
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 18px;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    padding: 10px 20px;
+    border-radius: 8px;
+    transition: 0.3s;
+    display: inline-block;
+    text-align: center;
+    margin-left: -10px;
+}
+
+/* Discord Button */
+.discord-btn {
+    background-color: #5865F2;
+}
+
+.discord-btn:hover {
+    background-color: #4752C4;
+}
+
+/* YouTube Button */
+.youtube-btn {
+    background-color: #FF0000;
+}
+
+.youtube-btn:hover {
+    background-color: #CC0000;
+}
+
+/* Twitter Button */
+.twitter-btn {
+    background-color: #1DA1F2;
+}
+
+.twitter-btn:hover {
+    background-color: #0A8CD2;
+}
+
+.partnered-creators {
+    margin-left: -100px;
+    color:white;
+    margin-top: 30px;
+}
+
+h2 {
+    font-size: 20px;
+    font-weight: bold;
+    border-bottom: 2px solid #5865F2;
+    padding-bottom: 5px;
+    margin-bottom: 15px;
+    margin-left: 118px; /* Aligns with main content */
+    display: flex;
+    align-items: center;
+}
+
+h2::before {
+    content: '';
+    height: 6px;
+    width: 6px;
+    background-color: #5865F2;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.community-section {
+    margin-left: 118px; /* Aligns with main content */
+    margin-top: 50px; /* Adds spacing from previous section */
+    color: white;
+}
+
+.community-section h2 {
+    font-size: 20px;
+    font-weight: bold;
+    border-bottom: 2px solid #5865F2;
+    padding-bottom: 5px;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+}
+
+.community-section h2::before {
+    content: '';
+    height: 6px;
+    width: 6px;
+    background-color: #5865F2;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.community-section p {
+    font-size: 16px;
+    color: #ffffff;
+    margin-top: 10px;
+}
